@@ -1,0 +1,718 @@
+{
+	"info": {
+		"_postman_id": "6c3cae15-bdaa-464e-93a8-b4ea022980f7",
+		"name": "Ashaware (portal)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"name\":\"munam\",\r\n\"email\":\"munam.ramay99@gmail.com\", \r\n\"encryptedPassword\":\"1122\", \r\n\"userRole\":\"superAdmin\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"email\":\"munam.ramay99@gmail.com\", \r\n\"encryptedPassword\":\"1122\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/getUserById/60a7ad87d3e1ae2ef4fc41cd",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getUserById",
+								"60a7ad87d3e1ae2ef4fc41cd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeUserById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/removeUserById/60a7ad87d3e1ae2ef4fc41cd",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"removeUserById",
+								"60a7ad87d3e1ae2ef4fc41cd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "inviteUser",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"email\":[\"munam.ramay99@gmail.com\",\"hafizwaleed0890@gmail.com\"],\r\n\"subject\":\"To join ashaware\",\r\n\"message\":\"i'm send you the link to join the Ashaware\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/inviteUser",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"inviteUser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "District",
+			"item": [
+				{
+					"name": "addDistrict",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"districtName\":\"lahore\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/addDistrict",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"addDistrict"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getDistrictById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/getDistrictById/60acd78e314f8e1d211042a6",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getDistrictById",
+								"60acd78e314f8e1d211042a6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllDistrict",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/getAllDistrict",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getAllDistrict"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateDistrictById",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"districtName\":\"lahore 1\",\r\n\"districtAdmin\":\"districtAdmin\",\r\n\"schools\":\"schools\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/updateDistrictById/60a7b028ec750f1c74e009e3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"updateDistrictById",
+								"60a7b028ec750f1c74e009e3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeDistrictById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"districtName\":\"lahore 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/removeDistrictById/60a7b028ec750f1c74e009e3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"removeDistrictById",
+								"60a7b028ec750f1c74e009e3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "School",
+			"item": [
+				{
+					"name": "addSchool",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"schoolName\":\"schoolName 1\",\r\n\"schoolEmail\":\"schoolEmail\",\r\n\"schoolPhone\":\"schoolPhone\",\r\n\"schoolAddress\":\"schoolAddress\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/addSchool",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"addSchool"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSchoolById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/getSchoolById/60a60ebac836a21d0441fb48",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getSchoolById",
+								"60a60ebac836a21d0441fb48"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllSchool",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/getAllSchool",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getAllSchool"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateSchoolById",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"schoolName\":\"schoolName 1.00\",\r\n\"schoolEmail\":\"schoolEmail\",\r\n\"schoolPhone\":\"schoolPhone\",\r\n\"schoolAddress\":\"schoolAddress\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/updateSchoolById/60a7b43ad88677145c9d02d4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"updateSchoolById",
+								"60a7b43ad88677145c9d02d4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeSchoolById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"districtName\":\"lahore 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/removeSchoolById/60a7b43ad88677145c9d02d4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"removeSchoolById",
+								"60a7b43ad88677145c9d02d4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Class",
+			"item": [
+				{
+					"name": "addClass",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"className\":\"Computer Class 4.0\",\r\n\"school\":\"60a60ebac836a21d0441fb48\",\r\n\"teacher\":\"60accfeb96e40f1a31e514f0\",\r\n\"students\":\"60accffb96e40f1a31e514f1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/addClass",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"addClass"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllClasses",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/getAllClasses",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getAllClasses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getClassById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/getClassById/60a7b92cde632c3aa8ee31ef",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getClassById",
+								"60a7b92cde632c3aa8ee31ef"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateClassById",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"className\":\"className 1.6\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/updateClassById/60a7b92cde632c3aa8ee31ef",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"updateClassById",
+								"60a7b92cde632c3aa8ee31ef"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeClassById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"districtName\":\"lahore 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/removeClassById/60a7bac27349771a904516a1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"removeClassById",
+								"60a7bac27349771a904516a1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Email Verify",
+			"item": [
+				{
+					"name": "generateEmailToken",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"munam.ramay99@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/generateEmailToken",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"generateEmailToken"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verifyEmail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sentToken\":\"7511eeb5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/verifyEmail",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"verifyEmail"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": ""
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
